@@ -12918,7 +12918,7 @@
 		(path "/a4491496-2c88-408b-8669-0cf66cb70d2b")
 		(sheetname "/")
 		(sheetfile "L431_RC_Periph.kicad_sch")
-		(attr smd exclude_from_bom)
+		(attr smd exclude_from_pos_files exclude_from_bom)
 		(fp_circle
 			(center 0 0)
 			(end 1.25 0)
