@@ -25,3 +25,5 @@ fp-info-cache
 *.csv
 
 L431_RC_Periph-backups/
+
+*.lck

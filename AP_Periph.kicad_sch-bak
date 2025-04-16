@@ -2236,19 +2236,9 @@
 		(color 0 0 0 0)
 		(uuid "c5fdc2e8-e5cf-43ba-851c-fad7a14fd683")
 	)
-	(junction
-		(at 218.44 139.7)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "e58e20ab-1374-4dbf-b0eb-4cf1699b060c")
-	)
 	(no_connect
 		(at 133.35 66.04)
 		(uuid "2eeac869-62a5-4a8e-bb00-ac054bcd9747")
-	)
-	(no_connect
-		(at 123.19 73.66)
-		(uuid "903d0036-c6b6-419b-868e-006bc9e28da2")
 	)
 	(no_connect
 		(at 133.35 68.58)
@@ -2267,16 +2257,6 @@
 			(type default)
 		)
 		(uuid "04e1d38a-41a7-4238-bf22-162cd951c57b")
-	)
-	(wire
-		(pts
-			(xy 218.44 137.16) (xy 218.44 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "06c24a9f-0595-48cb-8991-f36ac08d8c58")
 	)
 	(wire
 		(pts
@@ -2310,6 +2290,16 @@
 	)
 	(wire
 		(pts
+			(xy 203.2 137.16) (xy 224.79 137.16)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0cb7d49e-e895-435a-8562-b2cc2804abc3")
+	)
+	(wire
+		(pts
 			(xy 203.2 129.54) (xy 224.79 129.54)
 		)
 		(stroke
@@ -2327,26 +2317,6 @@
 			(type default)
 		)
 		(uuid "100c81bd-7e63-4c9b-ba3e-8588da13e7ba")
-	)
-	(wire
-		(pts
-			(xy 218.44 139.7) (xy 224.79 139.7)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "128b2a8d-d35b-4ebd-9d23-9922feedfaf6")
-	)
-	(wire
-		(pts
-			(xy 218.44 137.16) (xy 224.79 137.16)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "1330926c-e06b-4b74-9678-edc74922b8a8")
 	)
 	(wire
 		(pts
@@ -2660,7 +2630,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 139.7) (xy 218.44 139.7)
+			(xy 203.2 139.7) (xy 224.79 139.7)
 		)
 		(stroke
 			(width 0)
@@ -2910,7 +2880,7 @@
 	)
 	(wire
 		(pts
-			(xy 123.19 73.66) (xy 138.43 73.66)
+			(xy 116.84 73.66) (xy 138.43 73.66)
 		)
 		(stroke
 			(width 0)
@@ -3528,6 +3498,16 @@
 		)
 		(uuid "4e91c0ee-4739-424a-9854-86d603b47ce1")
 	)
+	(label "GPIO_CAN1_SILENT"
+		(at 203.2 137.16 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "5a0adf23-45c3-4e93-ba12-9493477dd5e3")
+	)
 	(label "CAN1_RX"
 		(at 123.19 104.14 0)
 		(effects
@@ -3607,6 +3587,16 @@
 			(justify right bottom)
 		)
 		(uuid "e7340445-30a9-44d3-9d4f-1cf6c8da560c")
+	)
+	(label "GPIO_CAN1_SILENT"
+		(at 116.84 73.66 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "e8282719-0656-4066-8ada-2fd69e5e23ec")
 	)
 	(label "CAN1_RX"
 		(at 203.2 134.62 0)
@@ -5039,14 +5029,6 @@
 				(hide yes)
 			)
 		)
-		(property "Notes" "No BOM"
-			(at 44.45 146.05 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
 		(pin "1"
 			(uuid "cbe8209c-20d9-4eaa-9506-2f89b0bde9bf")
 		)
@@ -5567,7 +5549,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+		(property "Datasheet" "~"
 			(at 113.03 63.5 0)
 			(effects
 				(font
@@ -5727,7 +5709,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+		(property "Datasheet" "~"
 			(at 97.79 111.76 0)
 			(effects
 				(font
@@ -5754,7 +5736,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 97.79 111.76 0)
 			(effects
 				(font
@@ -6170,7 +6152,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+		(property "Datasheet" "~"
 			(at 88.9 111.76 0)
 			(effects
 				(font
@@ -6197,7 +6179,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 88.9 111.76 0)
 			(effects
 				(font

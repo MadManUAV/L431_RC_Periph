@@ -157,21 +157,19 @@
 			(in_bom yes)
 			(on_board yes)
 			(property "Reference" "R"
-				(at 0.762 0.508 0)
+				(at 0 0 90)
 				(effects
 					(font
-						(size 1.27 1.27)
+						(size 1.016 1.016)
 					)
-					(justify left)
 				)
 			)
 			(property "Value" "R_Small"
-				(at 0.762 -1.016 0)
+				(at 1.778 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
-					(justify left)
 				)
 			)
 			(property "Footprint" ""
@@ -272,7 +270,7 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Interface_CAN_LIN:TCAN330G"
+		(symbol "Mad_Symbols:TCAN1057"
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
@@ -285,7 +283,7 @@
 					(justify left)
 				)
 			)
-			(property "Value" "TCAN330G"
+			(property "Value" "TCAN1057"
 				(at 2.54 8.89 0)
 				(effects
 					(font
@@ -304,7 +302,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "http://www.ti.com/lit/ds/symlink/tcan337.pdf"
+			(property "Datasheet" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -313,7 +311,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "High-Speed CAN Transceiver with CAN FD, 5Mbps, 3.3V supply, silent mode, shutdown mode, SOT-23-8/SOIC-8"
+			(property "Description" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -340,7 +338,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "TCAN330G_0_1"
+			(symbol "TCAN1057_0_1"
 				(rectangle
 					(start -10.16 7.62)
 					(end 10.16 -7.62)
@@ -353,7 +351,7 @@
 					)
 				)
 			)
-			(symbol "TCAN330G_1_1"
+			(symbol "TCAN1057_1_1"
 				(pin input line
 					(at -12.7 5.08 0)
 					(length 2.54)
@@ -390,10 +388,10 @@
 						)
 					)
 				)
-				(pin input line
+				(pin no_connect line
 					(at -12.7 -2.54 0)
 					(length 2.54)
-					(name "SHDN"
+					(name "N/C"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -462,6 +460,25 @@
 						)
 					)
 				)
+				(pin passive line
+					(at 0 -10.16 90)
+					(length 2.54)
+					(hide yes)
+					(name "GND"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "9"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
 				(pin bidirectional line
 					(at 12.7 2.54 180)
 					(length 2.54)
@@ -502,21 +519,11 @@
 			(embedded_fonts no)
 		)
 	)
-	(text "SHDN pin is actually N/C"
-		(exclude_from_sim no)
-		(at 124.46 88.9 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "abbb8b08-e0d2-4bf5-ab3a-4bad834d1c5c")
-	)
 	(junction
-		(at 140.97 71.12)
+		(at 129.54 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "04c21aa2-9358-49cb-ba4c-020065cb13bc")
+		(uuid "84bedf34-e059-425d-879d-0ed3f334feda")
 	)
 	(junction
 		(at 205.74 88.9)
@@ -535,10 +542,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c1854aaf-7a23-4114-b1ae-625661221ba7")
-	)
-	(no_connect
-		(at 129.54 91.44)
-		(uuid "e5227d7d-da40-4027-80e4-1d017f6e841d")
 	)
 	(wire
 		(pts
@@ -612,7 +615,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 71.12) (xy 140.97 71.12)
+			(xy 123.19 71.12) (xy 129.54 71.12)
 		)
 		(stroke
 			(width 0)
@@ -622,7 +625,7 @@
 	)
 	(wire
 		(pts
-			(xy 138.43 76.2) (xy 140.97 76.2)
+			(xy 123.19 76.2) (xy 129.54 76.2)
 		)
 		(stroke
 			(width 0)
@@ -662,16 +665,6 @@
 	)
 	(wire
 		(pts
-			(xy 140.97 71.12) (xy 149.86 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "770a3195-f95f-41c0-b194-d7a790f7cfb1")
-	)
-	(wire
-		(pts
 			(xy 129.54 83.82) (xy 137.16 83.82)
 		)
 		(stroke
@@ -679,16 +672,6 @@
 			(type default)
 		)
 		(uuid "814636ec-61a2-42b0-bbfe-b0d7681576f6")
-	)
-	(wire
-		(pts
-			(xy 129.54 91.44) (xy 137.16 91.44)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "84c84273-390d-4d2f-baf2-0b17da61042c")
 	)
 	(wire
 		(pts
@@ -749,6 +732,16 @@
 			(type default)
 		)
 		(uuid "d209d399-737e-4ae3-aa92-234efb05bc88")
+	)
+	(wire
+		(pts
+			(xy 129.54 71.12) (xy 149.86 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d6d068d6-9507-4093-b521-1206cc96da45")
 	)
 	(wire
 		(pts
@@ -848,7 +841,7 @@
 	)
 	(hierarchical_label "3V3"
 		(shape input)
-		(at 138.43 71.12 180)
+		(at 123.19 71.12 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -870,7 +863,7 @@
 	)
 	(hierarchical_label "GND"
 		(shape input)
-		(at 138.43 76.2 180)
+		(at 123.19 76.2 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -890,7 +883,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "545eb0c4-8ff0-4819-96c9-bc788d625bdf")
-		(property "Reference" "C?"
+		(property "Reference" "C12"
 			(at 210.8263 82.55 90)
 			(effects
 				(font
@@ -1023,14 +1016,14 @@
 		(instances
 			(project "L431_RC_Periph"
 				(path "/4cee0169-48cd-4af2-8890-7045155e0b79/6992b08b-1fa8-468e-a7a3-ba5f0cdd154c/59667026-08f2-47e2-8be4-f096db63e523"
-					(reference "C?")
+					(reference "C12")
 					(unit 1)
 				)
 			)
 		)
 	)
 	(symbol
-		(lib_id "Interface_CAN_LIN:TCAN330G")
+		(lib_id "Mad_Symbols:TCAN1057")
 		(at 149.86 88.9 0)
 		(unit 1)
 		(exclude_from_sim no)
@@ -1039,7 +1032,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "5f2ec131-fdb5-4854-aef3-7facacf2c147")
-		(property "Reference" "U?"
+		(property "Reference" "U3"
 			(at 152.0033 76.2 0)
 			(effects
 				(font
@@ -1182,10 +1175,13 @@
 		(pin "7"
 			(uuid "efa0aaa4-b402-4f6d-bed0-77860a892030")
 		)
+		(pin "9"
+			(uuid "6ed577d4-51cc-48e2-bade-02d73886c60c")
+		)
 		(instances
 			(project "L431_RC_Periph"
 				(path "/4cee0169-48cd-4af2-8890-7045155e0b79/6992b08b-1fa8-468e-a7a3-ba5f0cdd154c/59667026-08f2-47e2-8be4-f096db63e523"
-					(reference "U?")
+					(reference "U3")
 					(unit 1)
 				)
 			)
@@ -1193,7 +1189,7 @@
 	)
 	(symbol
 		(lib_id "Device:C_Small")
-		(at 140.97 73.66 0)
+		(at 129.54 73.66 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -1202,8 +1198,8 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "6aaa5b98-2f59-4e3d-ab47-a09a92620434")
-		(property "Reference" "C?"
-			(at 143.51 72.3962 0)
+		(property "Reference" "C10"
+			(at 132.08 72.3962 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1212,7 +1208,7 @@
 			)
 		)
 		(property "Value" "100nF"
-			(at 143.51 74.9362 0)
+			(at 132.08 74.9362 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1221,7 +1217,7 @@
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1230,7 +1226,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-250V_24.pdf"
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1239,7 +1235,7 @@
 			)
 		)
 		(property "Description" "0.1 µF ±10% 25V Ceramic Capacitor X7R 0402 (1005 Metric)"
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1248,7 +1244,7 @@
 			)
 		)
 		(property "Price" "$0.17"
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1257,7 +1253,7 @@
 			)
 		)
 		(property "Interface" ""
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1266,7 +1262,7 @@
 			)
 		)
 		(property "Rating" "CAP 0402 50V 100 NF X7R"
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1275,7 +1271,7 @@
 			)
 		)
 		(property "Supplier" "Digikey"
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1284,7 +1280,7 @@
 			)
 		)
 		(property "Supplier PN" "13-CC0402KPX7R9BB104CT-ND"
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1293,7 +1289,7 @@
 			)
 		)
 		(property "Manufacturer" "YAGEO"
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1302,7 +1298,7 @@
 			)
 		)
 		(property "MPN" "CC0402KPX7R9BB104"
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1311,7 +1307,7 @@
 			)
 		)
 		(property "Substitute" ""
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1320,7 +1316,7 @@
 			)
 		)
 		(property "LCSC" "C432917"
-			(at 140.97 73.66 0)
+			(at 129.54 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -1337,7 +1333,7 @@
 		(instances
 			(project "L431_RC_Periph"
 				(path "/4cee0169-48cd-4af2-8890-7045155e0b79/6992b08b-1fa8-468e-a7a3-ba5f0cdd154c/59667026-08f2-47e2-8be4-f096db63e523"
-					(reference "C?")
+					(reference "C10")
 					(unit 1)
 				)
 			)
@@ -1353,7 +1349,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c61e6095-b803-47aa-8d97-1f7b670d5400")
-		(property "Reference" "R?"
+		(property "Reference" "R13"
 			(at 203.2 80.0099 0)
 			(effects
 				(font
@@ -1389,7 +1385,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "59 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
+		(property "Description" "Resistor, small symbol"
 			(at 205.74 81.28 0)
 			(effects
 				(font
@@ -1497,7 +1493,7 @@
 		(instances
 			(project "L431_RC_Periph"
 				(path "/4cee0169-48cd-4af2-8890-7045155e0b79/6992b08b-1fa8-468e-a7a3-ba5f0cdd154c/59667026-08f2-47e2-8be4-f096db63e523"
-					(reference "R?")
+					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -1513,7 +1509,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ee9e6415-0a67-4c6b-b0b5-cdd0e3e141d4")
-		(property "Reference" "R?"
+		(property "Reference" "R14"
 			(at 203.2 93.9799 0)
 			(effects
 				(font
@@ -1549,7 +1545,7 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "59 Ohms ±1% 0.063W, 1/16W Chip Resistor 0402 (1005 Metric) Moisture Resistant Thick Film"
+		(property "Description" "Resistor, small symbol"
 			(at 205.74 95.25 0)
 			(effects
 				(font
@@ -1657,7 +1653,7 @@
 		(instances
 			(project "L431_RC_Periph"
 				(path "/4cee0169-48cd-4af2-8890-7045155e0b79/6992b08b-1fa8-468e-a7a3-ba5f0cdd154c/59667026-08f2-47e2-8be4-f096db63e523"
-					(reference "R?")
+					(reference "R14")
 					(unit 1)
 				)
 			)
