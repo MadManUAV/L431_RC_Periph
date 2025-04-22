@@ -4910,7 +4910,6 @@
 		(in_bom no)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
 		(uuid "3806bdaa-178a-4dbe-9805-f3162a454eed")
 		(property "Reference" "J5"
 			(at 38.1 146.0499 0)
@@ -5040,7 +5039,7 @@
 			)
 		)
 		(property "Notes" "No BOM"
-			(at 44.45 146.05 0)
+			(at 46.99 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)

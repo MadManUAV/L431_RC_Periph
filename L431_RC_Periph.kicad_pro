@@ -60,15 +60,15 @@
       ],
       "drc_exclusions": [
         [
-          "silk_edge_clearance|148485000|78065000|2b5dcbcd-e03e-4cc8-a642-d3c6d761bca2|915b02b8-94fa-4b4e-b2e5-60f4f60c5603",
+          "lib_footprint_mismatch|138000000|84035000|9a0d60ac-95f5-4c42-93c2-2194151ffca8|00000000-0000-0000-0000-000000000000",
           ""
         ],
         [
-          "silk_edge_clearance|148485000|78100000|2b5dcbcd-e03e-4cc8-a642-d3c6d761bca2|2d1b43dc-2638-4466-96d1-10be378c58d4",
+          "silk_edge_clearance|136545000|78100000|2b5dcbcd-e03e-4cc8-a642-d3c6d761bca2|7f022d2a-0939-4f77-b868-73ea835e67ab",
           ""
         ],
         [
-          "solder_mask_bridge|138062735|83557137|97b69b64-20c0-4ce4-90ca-ef6b4739a698|d6d78578-31a7-44a1-a7f8-b170bd2df739",
+          "silk_edge_clearance|149355000|78100000|2b5dcbcd-e03e-4cc8-a642-d3c6d761bca2|f46469bd-e360-4c5a-957b-75e3aa676559",
           ""
         ]
       ],
@@ -685,7 +685,7 @@
       "include_excluded_from_bom": true,
       "name": "",
       "sort_asc": true,
-      "sort_field": "LCSC"
+      "sort_field": "Value"
     },
     "connection_grid_size": 50.0,
     "drawing": {
