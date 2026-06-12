@@ -855,7 +855,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7nF"
+		(property "Value" "47nF"
 			(at 0 1.16 90)
 			(layer "F.Fab")
 			(uuid "604a86eb-8aa7-47c5-a721-91897b7de0b9")
@@ -1220,7 +1220,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -1487,7 +1487,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/150060VS75000.pdf"
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/150060BS75000.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -4973,7 +4973,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8657,7 +8657,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9153,7 +9153,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10091,7 +10091,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10395,7 +10395,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11317,7 +11317,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13129,7 +13129,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -15424,7 +15424,7 @@
 		(sheetname "/")
 		(sheetfile "L431_RC_Periph.kicad_sch")
 		(zone_connect 2)
-		(attr through_hole)
+		(attr through_hole exclude_from_bom)
 		(fp_line
 			(start -1.38 1.38)
 			(end 0 1.38)
@@ -15446,8 +15446,8 @@
 			(uuid "4280bd7a-2002-4306-81d0-68c2846eb034")
 		)
 		(fp_line
-			(start -1.38 -1.27)
-			(end 1.38 -1.27)
+			(start -1 -1.27)
+			(end 1 -1.27)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -15456,8 +15456,8 @@
 			(uuid "7f022d2a-0939-4f77-b868-73ea835e67ab")
 		)
 		(fp_line
-			(start -1.38 -1.27)
-			(end -1.38 -14.08)
+			(start -1 -1.27)
+			(end -1 -14.08)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -15466,8 +15466,8 @@
 			(uuid "611ce7bd-802b-4359-8c94-9c96c311fd7f")
 		)
 		(fp_line
-			(start 1.38 -1.27)
-			(end 1.38 -14.08)
+			(start 1 -1.27)
+			(end 1 -14.08)
 			(stroke
 				(width 0.12)
 				(type solid)
@@ -15476,8 +15476,8 @@
 			(uuid "f27ae4bc-40dd-4d5d-aa7d-c528307205db")
 		)
 		(fp_line
-			(start -1.38 -14.08)
-			(end 1.38 -14.08)
+			(start -1 -14.08)
+			(end 1 -14.08)
 			(stroke
 				(width 0.12)
 				(type solid)

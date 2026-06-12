@@ -5753,7 +5753,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 97.79 111.76 0)
 			(effects
 				(font
@@ -6196,7 +6196,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 88.9 111.76 0)
 			(effects
 				(font
