@@ -891,7 +891,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7nF"
+		(property "Value" "47nF"
 			(at 210.8263 85.09 90)
 			(effects
 				(font
