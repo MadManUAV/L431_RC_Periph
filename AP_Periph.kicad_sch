@@ -6647,9 +6647,30 @@
 			)
 		)
 	)
+	(wire
+		(pts
+			(xy 203.2 142.24) (xy 224.79 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3140be43-39cc-4b8c-8ab6-3d9c48b7c393")
+	)
+	(hierarchical_label "5V"
+		(shape input)
+		(at 203.2 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e9656deb-cc36-4a01-9d18-7c181c3a9ba5")
+	)
 	(sheet
 		(at 224.79 127)
-		(size 26.67 15.24)
+		(size 26.67 17.78)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -6673,7 +6694,7 @@
 			)
 		)
 		(property "Sheetfile" "TCAN.kicad_sch"
-			(at 224.79 142.8246 0)
+			(at 224.79 145.3646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6745,6 +6766,16 @@
 		(pin "Silent" input
 			(at 224.79 137.16 180)
 			(uuid "a5d5b246-465d-4b18-8d5d-1ed83e0c6556")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "5V" input
+			(at 224.79 142.24 180)
+			(uuid "21583e52-b4d7-4b48-96e3-0cabd3851f82")
 			(effects
 				(font
 					(size 1.27 1.27)

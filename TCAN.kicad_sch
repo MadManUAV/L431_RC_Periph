@@ -388,10 +388,10 @@
 						)
 					)
 				)
-				(pin no_connect line
+				(pin power_in line
 					(at -12.7 -2.54 0)
 					(length 2.54)
-					(name "N/C"
+					(name "VIO"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -518,12 +518,6 @@
 			)
 			(embedded_fonts no)
 		)
-	)
-	(junction
-		(at 129.54 71.12)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "84bedf34-e059-425d-879d-0ed3f334feda")
 	)
 	(junction
 		(at 205.74 88.9)
@@ -732,16 +726,6 @@
 			(type default)
 		)
 		(uuid "d209d399-737e-4ae3-aa92-234efb05bc88")
-	)
-	(wire
-		(pts
-			(xy 129.54 71.12) (xy 149.86 71.12)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d6d068d6-9507-4093-b521-1206cc96da45")
 	)
 	(wire
 		(pts
@@ -1115,7 +1099,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier PN" "296-TCAN1057ADRBRQ1CT-ND"
+		(property "Supplier PN" "296-TCAN1057AVDRBRQ1CT-ND"
 			(at 149.86 88.9 0)
 			(effects
 				(font
@@ -1133,7 +1117,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "TCAN1057ADRBRQ1"
+		(property "MPN" "TCAN1057AVDRBRQ1"
 			(at 149.86 88.9 0)
 			(effects
 				(font
@@ -1142,7 +1126,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5215844"
+		(property "LCSC" "C3234121"
 			(at 149.86 88.9 0)
 			(effects
 				(font
@@ -1658,5 +1642,236 @@
 				)
 			)
 		)
+	)
+	(symbol
+		(lib_id "Device:C_Small")
+		(at 146.05 73.66 0)
+		(mirror y)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "e15ed647-76b1-47a5-8079-95d75cb7b7bf")
+		(property "Reference" "C27"
+			(at 148.59 72.3962 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Value" "100nF"
+			(at 148.59 74.9362 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+		)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/productsearch/datasheet/mlcc/UPY-GPHC_X7R_6.3V-to-250V_24.pdf"
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "0.1 µF ±10% 25V Ceramic Capacitor X7R 0402 (1005 Metric)"
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "$0.17"
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Interface" ""
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "CAP 0402 50V 100 NF X7R"
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Digikey"
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier PN" "13-CC0402KPX7R9BB104CT-ND"
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "CC0402KPX7R9BB104"
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitute" ""
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C432917"
+			(at 146.05 73.66 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "0ca23c7a-9244-4fbd-b846-82c1080c9fbb")
+		)
+		(pin "2"
+			(uuid "038523be-9c16-408a-b50e-393d97b1377a")
+		)
+		(instances
+			(project "L431_RC_Periph"
+				(path "/4cee0169-48cd-4af2-8890-7045155e0b79/6992b08b-1fa8-468e-a7a3-ba5f0cdd154c/59667026-08f2-47e2-8be4-f096db63e523"
+					(reference "C27")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(junction
+		(at 146.05 71.12)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3a1d8aac-2d19-4bb4-bc6c-acbfdaefd12c")
+	)
+	(wire
+		(pts
+			(xy 140.97 71.12) (xy 146.05 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1aba1e6f-b34d-438e-b7d2-a213699df120")
+	)
+	(wire
+		(pts
+			(xy 146.05 71.12) (xy 149.86 71.12)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "378e9c3f-fd1e-4ce0-942b-d7b1be4f4a58")
+	)
+	(wire
+		(pts
+			(xy 146.05 76.2) (xy 140.97 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "252c12c4-a0f7-4e02-9ae0-a8b08ad4acc3")
+	)
+	(wire
+		(pts
+			(xy 137.16 91.44) (xy 134.62 91.44)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5f5a76c6-d869-4f28-ab36-2c380386ea95")
+	)
+	(hierarchical_label "5V"
+		(shape input)
+		(at 140.97 71.12 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "9c5e7d57-6ec7-4a2f-b8e6-68446db3332b")
+	)
+	(hierarchical_label "GND"
+		(shape input)
+		(at 140.97 76.2 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "6d5b1f2a-206a-469e-87b2-08dcd10d0d3a")
+	)
+	(hierarchical_label "3V3"
+		(shape input)
+		(at 134.62 91.44 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "c4cc0868-e76a-4c41-b8b2-9b1eb7072d04")
 	)
 )

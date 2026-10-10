@@ -1487,7 +1487,7 @@
 				)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/150060VS75000.pdf"
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/150060BS75000.pdf"
 			(at 0 0 90)
 			(layer "F.Fab")
 			(hide yes)
@@ -15424,7 +15424,7 @@
 		(sheetname "/")
 		(sheetfile "L431_RC_Periph.kicad_sch")
 		(zone_connect 2)
-		(attr through_hole)
+		(attr through_hole exclude_from_pos_files exclude_from_bom)
 		(fp_line
 			(start -1.38 1.38)
 			(end 0 1.38)
