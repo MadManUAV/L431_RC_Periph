@@ -2251,10 +2251,6 @@
 		(uuid "903d0036-c6b6-419b-868e-006bc9e28da2")
 	)
 	(no_connect
-		(at 133.35 68.58)
-		(uuid "b171b2b5-db72-4a8c-9aac-7d9e071ac8aa")
-	)
-	(no_connect
 		(at 59.69 151.13)
 		(uuid "f8888c65-4ef3-41d8-8052-c870ab3bda96")
 	)
@@ -5753,7 +5749,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 97.79 111.76 0)
 			(effects
 				(font
@@ -5830,7 +5826,156 @@
 				)
 			)
 		)
+	)	(symbol
+		(lib_id "Device:R_Small")
+		(at 130.81 68.58 90)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "bee35541-386e-4bfa-98e8-a92a7c7b17f8")
+		(property "Reference" "R18"
+			(at 130.81 66.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10K"
+			(at 130.81 70.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
+			(at 130.81 66.8 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://www.yageo.com/upload/media/product/products/datasheet/rchip/PYu-RC_Group_51_RoHS_L_12.pdf"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small symbol"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Manufacturer" "YAGEO"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "MPN" "RC0201FR-0710KL"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Price" "$0.16"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Rating" "RES 10K OHM 1% 1/20W 0201"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier" "Digikey"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Supplier PN" "311-10.0KNCT-ND"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Substitute" ""
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25744"
+			(at 130.81 68.58 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "d8eb54ce-7049-445b-993c-e0d2c016f591")
+		)
+		(pin "2"
+			(uuid "2cad5da0-abb1-4151-ae06-0e7a785df84d")
+		)
+		(instances
+			(project "L431_RC_Periph"
+				(path "/4cee0169-48cd-4af2-8890-7045155e0b79/6992b08b-1fa8-468e-a7a3-ba5f0cdd154c"
+					(reference "R18")
+					(unit 1)
+				)
+			)
+		)
+	)	(label "GND"
+		(at 128.27 68.58 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "6e66af95-504b-4381-8516-6c7cd7598b27")
 	)
+
 	(symbol
 		(lib_id "Device:C_Small")
 		(at 69.85 67.31 0)
@@ -6196,7 +6341,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 88.9 111.76 0)
 			(effects
 				(font
@@ -6647,9 +6792,30 @@
 			)
 		)
 	)
+	(wire
+		(pts
+			(xy 203.2 142.24) (xy 224.79 142.24)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3140be43-39cc-4b8c-8ab6-3d9c48b7c393")
+	)
+	(hierarchical_label "5V"
+		(shape input)
+		(at 203.2 142.24 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "e9656deb-cc36-4a01-9d18-7c181c3a9ba5")
+	)
 	(sheet
 		(at 224.79 127)
-		(size 26.67 15.24)
+		(size 26.67 17.78)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
@@ -6673,7 +6839,7 @@
 			)
 		)
 		(property "Sheetfile" "TCAN.kicad_sch"
-			(at 224.79 142.8246 0)
+			(at 224.79 145.3646 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6745,6 +6911,16 @@
 		(pin "Silent" input
 			(at 224.79 137.16 180)
 			(uuid "a5d5b246-465d-4b18-8d5d-1ed83e0c6556")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(pin "5V" input
+			(at 224.79 142.24 180)
+			(uuid "21583e52-b4d7-4b48-96e3-0cabd3851f82")
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -3968,7 +3968,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 251.46 133.35 0)
 			(effects
 				(font
@@ -4602,7 +4602,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/150060VS75000.pdf"
+		(property "Datasheet" "https://www.we-online.com/components/products/datasheet/150060BS75000.pdf"
 			(at 140.97 186.69 0)
 			(effects
 				(font
@@ -4914,7 +4914,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 251.46 149.86 0)
 			(effects
 				(font
@@ -5122,7 +5122,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 251.46 139.7 0)
 			(effects
 				(font
@@ -6086,7 +6086,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 251.46 101.6 0)
 			(effects
 				(font
@@ -6848,7 +6848,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 251.46 91.44 0)
 			(effects
 				(font
@@ -6931,7 +6931,7 @@
 		(at 271.78 36.83 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -8439,7 +8439,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 251.46 85.09 0)
 			(effects
 				(font
@@ -9306,6 +9306,26 @@
 			)
 		)
 	)
+	(wire
+		(pts
+			(xy 101.6 82.55) (xy 106.68 82.55)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "fe05042c-7c19-4301-84b8-b4efce169ecf")
+	)
+	(label "+5V"
+		(at 101.6 82.55 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right bottom)
+		)
+		(uuid "fdbae98e-25c2-454c-9848-1ae9479b1fd2")
+	)
 	(sheet
 		(at 106.68 77.47)
 		(size 40.64 58.42)
@@ -9339,6 +9359,16 @@
 				)
 				(justify left top)
 				(hide yes)
+			)
+		)
+		(pin "5V" input
+			(at 106.68 82.55 180)
+			(uuid "8c519c6a-27db-4de6-8005-0f24f3d548f7")
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
 			)
 		)
 		(pin "3V3" input
