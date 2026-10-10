@@ -855,7 +855,7 @@
 				)
 			)
 		)
-		(property "Value" "4.7nF"
+		(property "Value" "47nF"
 			(at 0 1.16 90)
 			(layer "F.Fab")
 			(uuid "604a86eb-8aa7-47c5-a721-91897b7de0b9")
@@ -1220,7 +1220,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -4973,7 +4973,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -8657,7 +8657,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -9153,7 +9153,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10091,7 +10091,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -10395,7 +10395,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -11317,7 +11317,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 180)
 			(unlocked yes)
 			(layer "F.Fab")
@@ -13129,7 +13129,7 @@
 				)
 			)
 		)
-		(property "MPN" "RC0402FR-071KL"
+		(property "MPN" "RC0402FR-075K1L"
 			(at 0 0 90)
 			(unlocked yes)
 			(layer "F.Fab")
