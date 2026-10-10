@@ -147,6 +147,9 @@ jobs:
       id: kicad_happy
       continue-on-error: true
       uses: aklofas/kicad-happy@main
+      with:
+        schematic: ${{ env.PROJECT_NAME }}.kicad_sch
+        pcb: ${{ env.PROJECT_NAME }}.kicad_pcb
 
     - name: Collect design review report
       if: steps.kicad_happy.outcome == 'success'
