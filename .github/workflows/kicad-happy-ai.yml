@@ -1,0 +1,77 @@
+name: KiCad AI Review (kicad-happy + Claude)
+
+# Tier-2 AI design review. Runs the deterministic kicad-happy analysis, then has
+# Claude read the report + datasheets and post a natural-language review as a PR
+# comment.
+#
+# REQUIRES the repository secret ANTHROPIC_API_KEY (Settings -> Secrets -> Actions).
+# Without it the job is skipped.
+#
+# PRIVACY / COST: design data and the analysis report are sent to Anthropic's API
+# (~$1-3 per PR). Only same-repo PRs run this (fork PRs get no secrets and no write
+# token), and only when KiCad files change.
+on:
+  pull_request:
+    branches: [master]
+    paths:
+      - '**.kicad_sch'
+      - '**.kicad_pcb'
+      - 'mad_lib/**'
+      - '.github/workflows/kicad-happy-ai.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  ai_review:
+    name: AI design review
+    runs-on: ubuntu-latest
+    if: github.event.pull_request.head.repo.full_name == github.event.pull_request.base.repo.full_name
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write          # required by claude-code-action
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+    steps:
+    - name: Checkout
+      if: env.ANTHROPIC_API_KEY != ''
+      uses: actions/checkout@v5
+      with:
+        submodules: recursive
+
+    - name: Install analysis dependencies
+      if: env.ANTHROPIC_API_KEY != ''
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ngspice poppler-utils
+
+    - name: Deterministic analysis (kicad-happy)
+      if: env.ANTHROPIC_API_KEY != ''
+      id: analysis
+      uses: aklofas/kicad-happy@main
+
+    - name: AI review (Claude)
+      if: env.ANTHROPIC_API_KEY != ''
+      uses: anthropics/claude-code-action@v1
+      with:
+        anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        prompt: |
+          The kicad-happy deterministic analysis has already been run.
+          Read the markdown report at ${{ steps.analysis.outputs.report-path }}
+          and the schematic analysis JSON at ${{ steps.analysis.outputs.schematic-json }}.
+
+          Do NOT re-run analysis scripts. Review the findings and:
+          1. Verify the top 3-5 IC pinouts against datasheets
+          2. Check WARNING/CRITICAL findings for accuracy
+          3. Check power sequencing, regulator feedback and protection coverage
+          4. Note anything the analysis may have missed
+
+          Post a concise summary (under 2000 chars) as a PR comment.
+          Focus on actionable findings only.
+        claude_args: '--model claude-sonnet-4-6 --max-turns 25'

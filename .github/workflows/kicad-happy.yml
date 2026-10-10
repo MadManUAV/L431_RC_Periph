@@ -6,10 +6,10 @@ name: KiCad Analysis (kicad-happy)
 # (kicad-happy-comment.yml) posts the comment with write permissions via the
 # trusted `workflow_run` trigger.
 #
-# Mitigations from the security audit of kicad-happy @ v1.3.2:
-#  - kicad-happy SHA-pinned (not @v1).
+# Notes:
+#  - kicad-happy tracks `main` (always latest, intentionally NOT pinned).
 #  - No distributor API keys passed  -> no DigiKey/Mouser/element14 egress.
-#  - No AI step (no claude-code-action) -> nothing sent to any LLM.
+#  - No AI step here -> nothing sent to any LLM (see kicad-happy-ai.yml).
 #  - Least privilege: contents: read only.
 on:
   pull_request:
@@ -46,7 +46,7 @@ jobs:
 
     - name: KiCad design review (no AI, no distributor keys)
       id: analysis
-      uses: aklofas/kicad-happy@839d9b03c42358ab16f2eedfdea6c4bc6469826f  # v1.3.2
+      uses: aklofas/kicad-happy@main
 
     - name: Upload report
       if: always()
