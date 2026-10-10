@@ -5852,7 +5852,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+		(property "Footprint" "Resistor_SMD:R_0201_0603Metric"
 			(at 130.81 66.8 90)
 			(effects
 				(font
@@ -5888,7 +5888,7 @@
 				(hide yes)
 			)
 		)
-		(property "MPN" "RC0402FR-0710KL"
+		(property "MPN" "RC0201FR-0710KL"
 			(at 130.81 68.58 0)
 			(effects
 				(font
@@ -5906,7 +5906,7 @@
 				(hide yes)
 			)
 		)
-		(property "Rating" "RES 10K OHM 1% 1/16W 0402"
+		(property "Rating" "RES 10K OHM 1% 1/20W 0201"
 			(at 130.81 68.58 0)
 			(effects
 				(font
@@ -5924,7 +5924,7 @@
 				(hide yes)
 			)
 		)
-		(property "Supplier PN" "311-10.0KLRCT-ND"
+		(property "Supplier PN" "311-10.0KNCT-ND"
 			(at 130.81 68.58 0)
 			(effects
 				(font
