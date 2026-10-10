@@ -1655,21 +1655,21 @@
 		(fields_autoplaced yes)
 		(uuid "e15ed647-76b1-47a5-8079-95d75cb7b7bf")
 		(property "Reference" "C27"
-			(at 148.59 72.3962 0)
+			(at 146.05 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify bottom)
 			)
 		)
 		(property "Value" "100nF"
-			(at 148.59 74.9362 0)
+			(at 146.05 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
-				(justify right)
+				(justify bottom)
 			)
 		)
 		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
