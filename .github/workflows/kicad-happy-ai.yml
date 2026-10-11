@@ -1,14 +1,14 @@
-name: KiCad AI Review (kicad-happy + Claude)
+name: KiCad AI Review (kicad-happy + ChatGPT)
 
 # Tier-2 AI design review. Runs the deterministic kicad-happy analysis, then has
-# Claude read the report + datasheets and post a natural-language review as a PR
-# comment.
+# ChatGPT (openai/codex-action) review the report and post a natural-language
+# review as a PR comment.
 #
-# REQUIRES the repository secret ANTHROPIC_API_KEY (Settings -> Secrets -> Actions).
+# REQUIRES the repository secret OPENAI_API_KEY (Settings -> Secrets -> Actions).
 # Without it the job is skipped.
 #
-# PRIVACY / COST: design data and the analysis report are sent to Anthropic's API
-# (~$1-3 per PR). Only same-repo PRs run this (fork PRs get no secrets and no write
+# PRIVACY / COST: design data and the analysis report are sent to OpenAI's API
+# (billed per use). Only same-repo PRs run this (fork PRs get no secrets and no write
 # token), and only when KiCad files change.
 on:
   pull_request:
@@ -34,33 +34,33 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-      id-token: write          # required by claude-code-action
     env:
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
     steps:
     - name: Checkout
-      if: env.ANTHROPIC_API_KEY != ''
+      if: env.OPENAI_API_KEY != ''
       uses: actions/checkout@v5
       with:
         submodules: recursive
 
     - name: Install analysis dependencies
-      if: env.ANTHROPIC_API_KEY != ''
+      if: env.OPENAI_API_KEY != ''
       run: |
         sudo apt-get update
         sudo apt-get install -y ngspice poppler-utils
 
     - name: Deterministic analysis (kicad-happy)
-      if: env.ANTHROPIC_API_KEY != ''
+      if: env.OPENAI_API_KEY != ''
       id: analysis
       uses: aklofas/kicad-happy@main
 
-    - name: AI review (Claude)
-      if: env.ANTHROPIC_API_KEY != ''
-      uses: anthropics/claude-code-action@v1
+    - name: AI review (ChatGPT / Codex)
+      if: env.OPENAI_API_KEY != ''
+      id: codex
+      uses: openai/codex-action@v1
       with:
-        anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        openai-api-key: ${{ secrets.OPENAI_API_KEY }}
+        sandbox: read-only
         prompt: |
           The kicad-happy deterministic analysis has already been run.
           Read the markdown report at ${{ steps.analysis.outputs.report-path }}
@@ -72,6 +72,23 @@ jobs:
           3. Check power sequencing, regulator feedback and protection coverage
           4. Note anything the analysis may have missed
 
-          Post a concise summary (under 2000 chars) as a PR comment.
+          Reply with a concise markdown summary (under 2000 chars).
           Focus on actionable findings only.
-        claude_args: '--model claude-sonnet-4-6 --max-turns 25'
+
+    - name: Post AI review comment
+      if: env.OPENAI_API_KEY != '' && steps.codex.outputs.final-message != ''
+      env:
+        GH_TOKEN: ${{ github.token }}
+        PR_NUMBER: ${{ github.event.pull_request.number }}
+        REVIEW: ${{ steps.codex.outputs.final-message }}
+      run: |
+        set -euo pipefail
+        MARKER='<!-- kicad-ai-review -->'
+        printf '%s\n## 🤖 AI Design Review (ChatGPT)\n\n%s\n' "$MARKER" "$REVIEW" > comment.md
+        existing=$(gh api "repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/comments" --paginate \
+          --jq "[.[] | select(.body | contains(\"${MARKER}\")) | .id] | first // empty")
+        if [ -n "$existing" ]; then
+          gh api -X PATCH "repos/${GITHUB_REPOSITORY}/issues/comments/${existing}" -F body=@comment.md >/dev/null
+        else
+          gh api -X POST "repos/${GITHUB_REPOSITORY}/issues/${PR_NUMBER}/comments" -F body=@comment.md >/dev/null
+        fi
