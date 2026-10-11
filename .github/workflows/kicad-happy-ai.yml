@@ -67,7 +67,7 @@ jobs:
 
     - name: AI review (GitHub Models)
       id: ai
-      uses: actions/ai-inference@v1
+      uses: actions/ai-inference@v3
       with:
         model: openai/gpt-4.1
         prompt-file: review-prompt.txt
