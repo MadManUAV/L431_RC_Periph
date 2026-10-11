@@ -1,0 +1,68 @@
+name: KiCad AI Review (self-hosted, personal login)
+
+# Runs the AI review on YOUR machine using the Claude Code / Codex CLI that is
+# already logged in there (personal subscription, no API billing). See
+# tools/SELF_HOSTED_AI_REVIEW.md for one-time setup.
+#
+# SECURITY: this repo is PUBLIC. A self-hosted runner executes code on your PC, so
+#  - the job only runs for same-repo PRs (never forks), and
+#  - it never checks out or executes PR code: it only downloads the report
+#    artifact produced by the sandboxed kicad-happy workflow and sends it to the
+#    LLM CLI with tools disabled.
+# Also set: Settings -> Actions -> General -> "Require approval for all outside
+# collaborators".
+#
+# Disabled until you set repo variable LOCAL_AI_REVIEW=true.
+on:
+  workflow_run:
+    workflows: ['KiCad Analysis (kicad-happy)']
+    types: [completed]
+
+permissions:
+  contents: read
+  actions: read
+  pull-requests: write
+
+jobs:
+  ai_review:
+    name: AI design review (local)
+    runs-on: [self-hosted, windows, ai-review]
+    if: >-
+      vars.LOCAL_AI_REVIEW == 'true' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.head_repository.full_name == github.repository
+    steps:
+    - name: Download report
+      uses: actions/download-artifact@v4
+      with:
+        name: kicad-review
+        run-id: ${{ github.event.workflow_run.id }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path: report
+
+    - name: Download meta
+      uses: actions/download-artifact@v4
+      with:
+        name: kicad-review-meta
+        run-id: ${{ github.event.workflow_run.id }}
+        github-token: ${{ secrets.GITHUB_TOKEN }}
+        path: meta
+
+    # Script comes from the default branch, not from the PR.
+    - name: Fetch review script
+      shell: pwsh
+      env:
+        GH_TOKEN: ${{ github.token }}
+      run: |
+        gh api "repos/$env:GITHUB_REPOSITORY/contents/tools/ai-review.ps1?ref=${{ github.event.repository.default_branch }}" -H "Accept: application/vnd.github.raw" > ai-review.ps1
+
+    - name: AI review and post comment
+      shell: pwsh
+      env:
+        GH_TOKEN: ${{ github.token }}
+        AI_PROVIDER: claude   # or: codex
+      run: |
+        $pr = (Get-Content meta/pr-number.txt -Raw).Trim()
+        if ($pr -notmatch '^\d+$') { throw "bad PR number" }
+        .\ai-review.ps1 -Provider $env:AI_PROVIDER -ReportPath report/report.md -PrNumber ([int]$pr) -Post

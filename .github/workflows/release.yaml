@@ -137,6 +137,31 @@ jobs:
         board: 'output_panel/Panel/${{ env.PROJECT_NAME }}-panel.kicad_pcb'
         logfile: 'logfile_panel/logfile.log'
 
+    # --- kicad-happy deterministic design review (tracks latest, no AI, no API keys) ---
+    - name: Install analysis dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y ngspice poppler-utils
+
+    - name: KiCad design review (kicad-happy)
+      id: kicad_happy
+      continue-on-error: true
+      uses: aklofas/kicad-happy@main
+      with:
+        schematic: ${{ env.PROJECT_NAME }}.kicad_sch
+        pcb: ${{ env.PROJECT_NAME }}.kicad_pcb
+
+    - name: Collect design review report
+      if: steps.kicad_happy.outcome == 'success'
+      env:
+        REPORT_PATH: ${{ steps.kicad_happy.outputs.report-path }}
+      run: |
+        set -euo pipefail
+        mkdir -p release_assets
+        if [ -n "$REPORT_PATH" ] && [ -f "$REPORT_PATH" ]; then
+          cp "$REPORT_PATH" "release_assets/${PROJECT_NAME}-${RELEASE_TAG}-design-review.md"
+        fi
+
     # --- Package each produced output dir into a versioned zip ---
     - name: Package release assets
       run: |
@@ -168,12 +193,12 @@ jobs:
         set -euo pipefail
         if gh release view "${RELEASE_TAG}" >/dev/null 2>&1; then
           echo "Release ${RELEASE_TAG} exists — updating assets in place."
-          gh release upload "${RELEASE_TAG}" release_assets/*.zip --clobber
+          gh release upload "${RELEASE_TAG}" release_assets/* --clobber
           gh release edit "${RELEASE_TAG}" --title "${PROJECT_NAME} ${RELEASE_TAG}" --draft=false
         else
           echo "Creating release ${RELEASE_TAG}."
           gh release create "${RELEASE_TAG}" \
-            release_assets/*.zip \
+            release_assets/* \
             --title "${PROJECT_NAME} ${RELEASE_TAG}" \
             --generate-notes
         fi
