@@ -76,12 +76,12 @@ jobs:
     - name: AI review (Copilot CLI)
       if: env.COPILOT_PAT != ''
       id: ai
-      uses: actions/ai-inference@v3
       env:
         COPILOT_GITHUB_TOKEN: ${{ secrets.COPILOT_PAT }}
-      with:
-        model: gpt-4.1
-        prompt-file: review-prompt.txt
+      run: |
+        set -o pipefail
+        copilot -p "$(cat review-prompt.txt)" -s --no-ask-user --model gpt-4.1 > ai-response.md 2> ai-error.log || { echo '--- copilot stderr ---'; cat ai-error.log; exit 1; }
+        echo "response-file=$PWD/ai-response.md" >> "$GITHUB_OUTPUT"
 
     - name: Post AI review comment
       if: env.COPILOT_PAT != ''
