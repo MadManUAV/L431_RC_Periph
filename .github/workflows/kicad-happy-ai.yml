@@ -65,9 +65,14 @@ jobs:
           head -c 12000 "$REPORT_PATH"
         } > review-prompt.txt
 
+    - name: Probe GitHub Models
+      continue-on-error: true
+      run: |
+        curl -s -i https://models.github.ai/catalog/models -H "Authorization: Bearer ${{ github.token }}" | head -c 600
+
     - name: AI review (GitHub Models)
       id: ai
-      uses: actions/ai-inference@v3
+      uses: actions/ai-inference@v2.1.1
       with:
         model: openai/gpt-4.1
         prompt-file: review-prompt.txt
